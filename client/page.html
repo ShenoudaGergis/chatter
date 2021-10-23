@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/chat.css">
+</head>
+
+<body>
+    <div id="joinFace" class="form">
+        <div class="title">Join</div>
+        <div class="input-container ic1">
+            <input id="username" class="input" type="text" placeholder=" " />
+            <div class="cut"></div>
+            <label for="username" class="placeholder">username</label>
+        </div>
+        <div class="input-container ic2">
+            <input id="channelName" class="input" type="text" placeholder=" " />
+            <div class="cut"></div>
+            <label for="channelName" class="placeholder">channel</label>
+        </div>
+        <button id="joinBtn" type="button" class="submit">join</button>
+    </div>
+
+    <section id="chatFace" class="msger" style="display: none;">
+        <header class="msger-header">
+            <div class="msger-header-title">
+                <span id="usersCount" class="fas fa-comment-alt"></span>
+                <i id="usersTyping" class="fas fa-comment-alt"></i>
+            </div>
+            <div class="msger-header-options">
+                <span id="logoutSpan" style="text-decoration: underline; cursor: pointer;">Logout</span>
+            </div>
+        </header>
+        <main id="messagesHolder" class="msger-chat">
+
+
+        </main>
+        <form class="msger-inputarea">
+            <textarea id="messageInput" class="msger-input" placeholder="Enter your message..."></textarea>
+            <button id="sendBtn" type="button" class="msger-send-btn">Send</button>
+        </form>
+    </section>
+
+    <div id="liveUsersFace" class="form" style="display: none;background-color: #b1c9b8;overflow: auto;">
+        <br />
+        <h2>Live users</h2>
+        <br /><hr /><br />
+        <table id="liveUsers">
+
+        </table>
+    </div>
+
+    <script type="text/javascript" src="js/assets.js"></script>
+    <script type="text/javascript" src="js/socket.js"></script>
+    <script type="text/javascript" src="js/ui.js"></script>
+</body>
+
+</html>
