@@ -17,4 +17,5 @@
 - I use `ws` package from npm to create the `web socket server`
 - I use the native javascript `WebSocket` for client communication
 
-
+#### Usage
+- You can use our application on that link https://chatter-now.herokuapp.com/ for free
