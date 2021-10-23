@@ -1,10 +1,10 @@
 let { WebSocketServer } = require("ws");
-let getTCPport = require("./ports.js");
+let httpServer          = require("./http-server.js");
 
 //-----------------------------------------------------------------------------
 
-function Server(port) {
-	this.wss = new WebSocketServer({ port : port });
+function Server() {
+	this.wss = new WebSocketServer({ server : httpServer });
 	this.clients = {};
 	this.hookEvents();
 }
@@ -170,13 +170,7 @@ Server.prototype.closeSocketConnection = function(ws) {
 
 //-----------------------------------------------------------------------------
 
-let port = null;
-if(process.env.PORT) {
-    port = Promise.resolve(process.env.PORT);
-} else {
-    port = getTCPport(3000);
-}
-port.then((port) => {
-	new Server(port);
-	console.log(":: socket server starts :" , port);
-})
+httpServer.listen(process.env.PORT , () => {
+	console.log(":: servers started");
+	new Server();
+});

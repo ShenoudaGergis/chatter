@@ -1,7 +1,6 @@
 let express = require("express");
 let app     = express();
 let path    = require("path");
-let getTCPport = require("./ports.js");
 
 //-----------------------------------------------------------------------------
 
@@ -21,14 +20,4 @@ app.use((req , res , next) => {
 
 //-----------------------------------------------------------------------------
 
-let port = null;
-if(process.env.PORT) {
-    port = Promise.resolve(process.env.PORT);
-} else {
-    port = getTCPport(3000);
-}
-port.then((port) => {
-    app.listen(port , () => {
-        console.log(":: http server starts :" , port);
-    });
-})
+module.exports = app;

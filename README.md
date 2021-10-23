@@ -17,8 +17,4 @@
 - I use `ws` package from npm to create the `web socket server`
 - I use the native javascript `WebSocket` for client communication
 
-#### How to use
-- Run the server by the following command `npm start`
-- Open a browser new tab and open `page.html` file
-
 
