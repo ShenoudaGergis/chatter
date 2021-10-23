@@ -18,7 +18,7 @@
 - I use the native javascript `WebSocket` for client communication
 
 #### How to use
-- Run the server by the following command `node initiate.js`
+- Run the server by the following command `npm start`
 - Open a browser new tab and open `page.html` file
 
 
